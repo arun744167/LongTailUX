@@ -13,12 +13,11 @@ class UserHierarchy
 {
 
 protected array $roleData = [];
-
 protected array $usersData = [];
 
 protected array $roles = [];
 protected array $users = [];
-public array $userRoleGroup = [];
+protected array $userRoleGroup = [];
 
 public function __construct($userData, $rolesData){
     $this->usersData = $userData;
@@ -53,7 +52,7 @@ public function Subordinate($userId, $subordinates = null): array {
     if ($subordinates === null){ // for initial call get role id from saved user objects
         $roleId = $this->users[$userId]->roleId;
     } else {
-        $roleId = $subordinates->roleId; // on recursive subordinate next role id
+        $roleId = $subordinates->roleId; // on recursive subordinate get next role id
     }
 
      foreach ($this->userRoleGroup as $userRole){ // scan for userRoleGroup to get subordinates
@@ -68,7 +67,7 @@ public function Subordinate($userId, $subordinates = null): array {
      return $subUsers;
 }
 
-//output the subordinate
+//output the subordinates or user hierarchy
 public function getSubordinates($userId){
     return json_encode($this->Subordinate($userId));
 }

@@ -1,9 +1,9 @@
 # LongTailUX User Hierarchy
 
-##Description
+## Description
 Get subordinates or User Hierarchy for the selected user.
 This project as one unit test to determine the user hierarchy, to get
-subordinated users.
+subordinated users, which tests the user hierarchy use case.
 
 ## Project Installation and Requirements
 
@@ -16,4 +16,4 @@ composer required version 1.10.* required (Tested on this version)
 Run "composer install" to generate vendor folder
 
 ### Running Unit Tests
-/vendor/bin/phpunit
+run "/vendor/bin/phpunit" on command line
