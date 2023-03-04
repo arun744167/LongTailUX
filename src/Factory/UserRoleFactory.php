@@ -2,7 +2,7 @@
 
 namespace Longtail\UserSubordinate\Factory;
 
-use Longtail\UserSubordinate\UserRole;
+use Longtail\UserSubordinate\Model\UserRole;
 
 class UserRoleFactory
 {

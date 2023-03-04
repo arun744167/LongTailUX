@@ -1,6 +1,6 @@
 <?php
 
-namespace Longtail\UserSubordinate;
+namespace Longtail\UserSubordinate\Model;
 
 class Role
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Longtail\UserSubordinate;
+namespace Longtail\UserSubordinate\Model;
 
 // create a user and roles pivot object to find subordinate of the current user
 class UserRole
