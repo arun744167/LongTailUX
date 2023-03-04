@@ -4,16 +4,12 @@ use PHPUnit\Framework\TestCase;
 
 class UserRoleTest extends TestCase
 {
-    public function setUp(): void{
-        parent::setUp();
-    }
-
     /**
      * @dataProvider userRoleDataProvider
      */
     public function testSubOrdinates($roleData, $userData){
 
-        $buildUserRole = new Longtail\UserSubordinate\UserServices($userData, $roleData);
+        $buildUserRole = new Longtail\UserSubordinate\UserHierarchy($userData, $roleData);
 
         $buildUserRole->createUsers();
         $buildUserRole->createRoles();

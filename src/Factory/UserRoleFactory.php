@@ -6,7 +6,7 @@ use Longtail\UserSubordinate\UserRole;
 
 class UserRoleFactory
 {
-    public static function createUserRole($users, $roles){
+    public static function create($users, $roles){
         $userRoleGroup = [];
 
         foreach ($users as $user){

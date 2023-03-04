@@ -6,7 +6,7 @@ use Longtail\UserSubordinate\User;
 
 class UserFactory
 {
-    public static function createUser($id, $name, $roleId){
+    public static function create($id, $name, $roleId){
         return new User($id, $name, $roleId);
     }
 }

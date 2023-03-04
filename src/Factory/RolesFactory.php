@@ -6,7 +6,7 @@ use Longtail\UserSubordinate\Role;
 
 class RolesFactory
 {
-    public static function createRole($id, $name, $parentId){
+    public static function create($id, $name, $parentId){
         return new Role($id, $name, $parentId);
     }
 }

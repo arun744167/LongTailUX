@@ -8,8 +8,8 @@ use Longtail\UserSubordinate\Factory\UserRoleFactory;
 use Longtail\UserSubordinate\Services\UserService;
 
 
-// User Manager class create user,
-class UserServices
+// User Manager class create user, roles and userRole Group lists
+class UserHierarchy
 {
 
 protected array $roleData = [];
@@ -29,7 +29,7 @@ public function __construct($userData, $rolesData){
 public function createRoles() : void {
     foreach ($this->roleData as $data){
         $role = json_decode($data, true);
-        $this->roles[$role['Id']] = RolesFactory::createRole($role['Id'], $role['Name'], $role['Parent'] );
+        $this->roles[$role['Id']] = RolesFactory::create($role['Id'], $role['Name'], $role['Parent'] );
     }
 }
 
@@ -37,16 +37,16 @@ public function createRoles() : void {
 public function createUsers() : void {
     foreach ($this->usersData as $data){
         $user = json_decode($data, true);
-        $this->users[$user['Id']] = UserFactory::createUser($user['Id'], $user['Name'], $user['Role'] );
+        $this->users[$user['Id']] = UserFactory::create($user['Id'], $user['Name'], $user['Role'] );
     }
 }
 
 //Create array of user role group objects assumed to pivot object
 public function userRoleGrouping() : void {
-    $this->userRoleGroup = UserRoleFactory::createUserRole($this->users, $this->roles);
+    $this->userRoleGroup = UserRoleFactory::create($this->users, $this->roles);
 }
 
-// Recursively look up tp find Subordinates, initially
+// Recursively look up to find Subordinates
 public function Subordinate($userId, $subordinates = null): array {
     $subUsers = [];
 
@@ -68,6 +68,7 @@ public function Subordinate($userId, $subordinates = null): array {
      return $subUsers;
 }
 
+//output the subordinate
 public function getSubordinates($userId){
     return json_encode($this->Subordinate($userId));
 }
