@@ -1,1 +1,1 @@
-{"version":1,"defects":[],"times":{"UserRoleTest::testSubOrdinates with data set #0":0.017}}
+{"version":1,"defects":{"UserRoleTest::testSubOrdinates with data set #0":4},"times":{"UserRoleTest::testSubOrdinates with data set #0":0.013}}

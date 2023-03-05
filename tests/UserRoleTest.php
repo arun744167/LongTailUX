@@ -9,7 +9,7 @@ class UserRoleTest extends TestCase
      */
     public function testSubOrdinates($roleData, $userData){
 
-        $buildUserRole = new Longtail\UserSubordinate\UserHierarchy($userData, $roleData);
+        $buildUserRole = new Longtail\UserSubordinate\BuildUserHierarchy($userData, $roleData);
 
         $buildUserRole->createUsers();
         $buildUserRole->createRoles();
@@ -60,6 +60,7 @@ class UserRoleTest extends TestCase
             $this->assertContainsEquals($value, json_decode($buildUserRole->getSubordinates(1), true));
         }
 
+       $this->assertEmpty(json_decode($buildUserRole->getSubordinates(5), true));
 
     }
 

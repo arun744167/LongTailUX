@@ -9,7 +9,7 @@ use Longtail\UserSubordinate\Services\UserService;
 
 
 // User Manager class create user, roles and userRole Group lists
-class UserHierarchy
+class BuildUserHierarchy
 {
 
 protected array $roleData = [];
